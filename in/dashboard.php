@@ -11,6 +11,17 @@
 
 </head>
 <body>
+    
+<?php
+    $email = $_SESSION['email'];
+    $s = "SELECT * FROM login WHERE email = '$email'";
+    $t = mysqli_query($db, $s) or die("Error Querying Database.");
+
+    while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
+        $firstName 				= $r[ "firstName" ];
+        $lastName            	= $r[ "lastName" ];
+    }
+?>
 <!-- partial:index.partial.html -->
 <body>
   <div id="wrapper" class="menuDisplayed">
@@ -23,18 +34,25 @@
                 <div class="profileInfo" style="background: url(../profile/ToddMurphy.png);">
                 </div>
                 <div class="profileInfoText">
-                    Insert Name
-                    <br>
-                    Insert School
+                    <?php
+                        echo $firstName. " ". $lastName. "<br> Washington Township High School";
+                    ?>
                 </div>
             </li>
             <br>
             <li class="liElement"><a href="#"><span class="showClasses">My Classes</span></a>
             </li>
             <!-- PHP CODE for pulling classes from db-->
-                <li class="liElement classMenu"><a href="">&nbsp;USA</a></li>
-                <li class="liElement classMenu"><a href="">&nbsp;Australia</a></li>
-                <li class="liElement classMenu"><a href="">&nbsp;UK</a></li>
+            <?php
+            
+                while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
+                    $class 				= $r[ "class" ];
+                    
+                    echo "<li class='liElement classMenu'><a href=''>&nbsp;$class</a></li>";
+                    
+                }
+            
+            ?>
             <!-- PHP CODE for pulling classes from db-->
             <li class="liElement"><a href="createclass.html">Create Class</a></li>
         </ul>

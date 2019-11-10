@@ -61,7 +61,7 @@
                             <label>From:</label>
                             <input type="text" name="startDate">
                             <br>
-                            <label>To:</label>
+                            <label>To:&nbsp;</label>
                             <input type="text" name="endDate">
                         </div>
                         <br>
@@ -76,7 +76,7 @@
                         <input type='checkbox' name='checkbox' value='$email'>&nbsp;Suzy Hlinka
                         <!--while (row thing){
                                 $student = $r['firstName']. " " .$r['lastName'];
-                                echo "<input type='checkbox' name='checkbox' value='$email'>&nbsp;$student";
+                                echo "<input type='checkbox' name='checkbox[]' value='$email'>&nbsp;$student";
                             }-->
                     </div>
                 </div>
