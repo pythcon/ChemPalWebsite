@@ -1,4 +1,5 @@
 var flag = 1;
+var a;
 
 $('.showClasses').click(function() {
     console.log(flag);
@@ -11,5 +12,6 @@ $('.showClasses').click(function() {
     $('.classMenu').css('display', 'none');
     flag = 1;
   }
-
+    a = $(this).html();
+    window.resizeTo(a);
 });

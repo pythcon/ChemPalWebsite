@@ -4,8 +4,8 @@
             session_start();
             error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
             ini_set('display_errors' , 1);
-            include ("account.php");
-            include("functions.php");
+            include ("../../account.php");
+            include("../../functions.php");
             $db = mysqli_connect($hostname, $username, $password, $project);
             mysqli_select_db($db, $project); 
             
@@ -21,7 +21,7 @@
             if (isset($_POST['submit'])){
                 if (!empty($_POST['checkbox'])){
                     foreach ($_POST['checkbox'] as $selected){
-                        $studentArrayString.=$selected.",";
+                        $studentArrayString .= $selected.",";
                     }
                 }
             }
@@ -32,8 +32,8 @@
             
             echo"
             <script>
-                alert(\"Class created."\");
-                window.location.replace(\"/in/dashboard.html\");
+                alert(\"Class created.\");
+                window.location.replace(\"/in/dashboard.php\");
             </script>";
         ?>
 <!------------------------------------------------------------------->

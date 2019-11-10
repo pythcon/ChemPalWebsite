@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    include("../account.php");
+    include("../functions.php");
+    
+     $db = mysqli_connect($hostname, $username, $password, $project);
+
+    if (mysqli_connect_errno())
+      {	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+          exit();
+      }
+    mysqli_select_db($db,$project);
+    
+    
+    $email = $_SESSION['email'];
+    $firstName = $_SESSION['firstname'];
+    $lastName = $_SESSION['lastname'];
+?>
+
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
@@ -23,20 +42,28 @@
                 <div class="profileInfo" style="background: url(../profile/ToddMurphy.png);">
                 </div>
                 <div class="profileInfoText">
-                    Insert Name
-                    <br>
-                    Insert School
+                    <?php
+                        echo $firstName. " ". $lastName. "<br> Washington Township High School";
+                    ?>
                 </div>
             </li>
             <br>
             <li class="liElement"><a href="#"><span class="showClasses">My Classes</span></a>
             </li>
             <!-- PHP CODE for pulling classes from db-->
-                <li class="liElement classMenu"><a href="">&nbsp;USA</a></li>
-                <li class="liElement classMenu"><a href="">&nbsp;Australia</a></li>
-                <li class="liElement classMenu"><a href="">&nbsp;UK</a></li>
+            <?php
+                $s = "SELECT * FROM class WHERE email='$email'"; 
+                $t = mysqli_query($db,$s) or die("Error submitting query"); 
+                while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
+                    $class 				= $r[ "className" ];
+                    
+                    echo "<li class='liElement classMenu'><a href=''>&nbsp;$class</a></li>";
+                    
+                }
+            
+            ?>
             <!-- PHP CODE for pulling classes from db-->
-            <li class="liElement"><a href="createclass.html">Create Class</a></li>
+            <li class="liElement"><a href="createclass.php">Create Class</a></li>
         </ul>
     </div>
     
@@ -50,36 +77,42 @@
             <p class="text-center"></p>
           <div class="infoContainer">
             <div class="createContainer">
-                <div class="createOptions">
-                    <form action="handler_createclass.php" method="post" name="classForm">
-                        <label>Class Name:</label>
-                        <input type="text" name="className">
-                        <br>
-                        <h2 class="createClassHeading">RUN TIME</h2>
-                        <div class="indented">
+                <form action="handlers/handler_createclass.php" method="post" name="classForm">
+                    <div class="createOptions">
+                            <label>Class Name:</label>
+                            <input type="text" name="className">
                             <br>
-                            <label>From:</label>
-                            <input type="text" name="startDate">
+                            <h2 class="createClassHeading">RUN TIME</h2>
+                            <div class="indented">
+                                <br>
+                                <label>From:</label>
+                                <input type="text" name="startDate">
+                                <br>
+                                <label>To:&nbsp;</label>
+                                <input type="text" name="endDate">
+                            </div>
                             <br>
-                            <label>To:&nbsp;</label>
-                            <input type="text" name="endDate">
-                        </div>
-                        <br>
-                        <label>Description:</label>
-                        <br>
-                        <textarea name="classDescription">
-                        </textarea>
-                    </form>
-                </div>
-                <div class="studentContainer">
-                    <div class="studentCheckboxes">
-                        <input type='checkbox' name='checkbox' value='$email'>&nbsp;Suzy Hlinka
-                        <!--while (row thing){
-                                $student = $r['firstName']. " " .$r['lastName'];
-                                echo "<input type='checkbox' name='checkbox[]' value='$email'>&nbsp;$student";
-                            }-->
+                            <label>Description:</label>
+                            <br>
+                            <textarea name="classDescription"></textarea>
                     </div>
-                </div>
+                    <div class="studentContainer">
+                        <div class="studentCheckboxes">
+                            <?php
+                                $s = "SELECT * FROM students"; 
+                                $t = mysqli_query($db,$s) or die("Error submitting query"); 
+                                while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
+                                    $student = $r['firstName']. " " .$r['lastName'];
+                                    $email   = $r['email'];
+                                    echo "<input type='checkbox' name='checkbox[]' value='$email'>&nbsp;$student <br>";
+
+                                }
+
+                            ?>
+                        </div>
+                        <input type="submit" value="submit" name="submit">
+                    </div>
+                </form>
             </div>
           </div>
           </div>
