@@ -50,6 +50,7 @@
                 </div>
             </li>
             <br>
+            <li class="liElement"><a href="dashboard.php">Dashboard</a></li>
             <li class="liElement"><a href="#"><span class="showClasses">My Classes</span></a>
             </li>
             <!-- PHP CODE for pulling classes from db-->
