@@ -78,7 +78,7 @@
               <div class="col-lg-12">
                 <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
                 <h1 class="text-center">Welcome to ChemPal</h1>
-                <h2 class="small text-center">Be Smart. Get Safe.</h2>
+                <h2 class="small text-center">Science Done Safe.</h2>
                 <p class="text-center"></p>
               </div>
             </div>
