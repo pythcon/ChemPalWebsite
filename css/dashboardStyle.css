@@ -36,9 +36,9 @@
 .sidebar-nav{
   padding:0;
   list-style:none; 
-	transition:all .5s;
-	width:100%;
-	text-align:center;
+  transition:all .5s;
+  width:100%;
+  text-align:center;
 }
 
 .sidebar-nav li{
@@ -59,7 +59,6 @@
 }
 
 .chemPalLogo{
-    float: left;
     background: url("../images/webLogoSmall.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -71,5 +70,25 @@
 }
 
 .profileInfo{
-    float: left;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: contain;
+    height: 200px;
+    width: 100%;
+}
+.profileInfoText{
+    height: 100px;
+    width: 100%;
+}
+
+#classMenu {
+    display: none;
+    max-height: 200px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s ease-out;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

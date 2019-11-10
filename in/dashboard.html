@@ -2,10 +2,12 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>SideNav</title>
+  <title>ChemPal | Dashboard</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="../css/dashboardStyle.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 
 </head>
 <body>
@@ -18,14 +20,21 @@
             <li class="profileTab">
                 <div class="chemPalLogo">
                 </div>
-                <div class="profileInfo">
-                    This is the Profile information
-                    <br>
+                <div class="profileInfo" style="background: url(../profile/ToddMurphy.png);">
                 </div>
-                <br>
+                <div class="profileInfoText">
+                    Insert Name
+                    <br>
+                    Insert School
+                </div>
             </li>
-            <li class="liElement"><a href="#">My Classes</a></li>
-            <li class="liElement"><a href="#">Create Class</a></li>
+            <br>
+            <li class="liElement"><a href="#"><span class="showClasses">My Classes</span></a>
+            </li>
+                <li class="liElement" id="classMenu"><a href="">&nbsp;USA</a></li>
+                <li class="liElement" id="classMenu"><a href="">&nbsp;Australia</a></li>
+                <li class="liElement" id="classMenu"><a href="">&nbsp;UK</a></li>
+            <li class="liElement"><a href="createclass.html">Create Class</a></li>
         </ul>
     </div>
     
@@ -48,8 +57,9 @@
 	
 </body>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  
   <script  src="../js/dashboardScript.js"></script>
+  <script  src="../js/dashboardSubMenu.js"></script>
 
 </body>
 </html>
