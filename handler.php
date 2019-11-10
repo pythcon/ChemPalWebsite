@@ -43,5 +43,5 @@
 
 //redirect to dashboard
 //passed authentication
-    redirect("<span style=\"color:green;\">You have successfully logged in...</span>", "/in/dashboard.html", $delay);
+    redirect("<span style=\"color:green;\">You have successfully logged in...</span>", "/in/dashboard.php", $delay);
 ?>

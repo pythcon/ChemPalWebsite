@@ -49,7 +49,7 @@
             
             ?>
             <!-- PHP CODE for pulling classes from db-->
-            <li class="liElement"><a href="createclass.html">Create Class</a></li>
+            <li class="liElement"><a href="createclass.php">Create Class</a></li>
         </ul>
     </div>
     
