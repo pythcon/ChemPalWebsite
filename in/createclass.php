@@ -43,7 +43,7 @@
                 </div>
                 <div class="profileInfoText">
                     <?php
-                        echo $firstName. " ". $lastName. "<br> Washington Township High School";
+                        echo "<h2>$firstName $lastName</h2><br> Washington Township High School";
                     ?>
                 </div>
             </li>
