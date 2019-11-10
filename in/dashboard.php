@@ -14,13 +14,8 @@
     
 <?php
     $email = $_SESSION['email'];
-    $s = "SELECT * FROM login WHERE email = '$email'";
-    $t = mysqli_query($db, $s) or die("Error Querying Database.");
-
-    while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
-        $firstName 				= $r[ "firstName" ];
-        $lastName            	= $r[ "lastName" ];
-    }
+    $firstName = $_SESSION['firstname'];
+    $lastName = $_SESSION['lastname'];
 ?>
 <!-- partial:index.partial.html -->
 <body>
