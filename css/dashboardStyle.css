@@ -1,3 +1,4 @@
+
 /* Sidebar */
 #sidebar-wrapper{
   z-index:1;
@@ -14,9 +15,16 @@
 /* Main Content */
 #page-content-wrapper{
   width: 100%;	
+  height: 100%;
   position: absolute;
   padding:15px;
 	transition:all .5s;
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #menu-toggle{
@@ -30,6 +38,7 @@
 
 #wrapper.menuDisplayed #page-content-wrapper{
   padding-left:250px;
+    
 }
 
 /* Sidebar styling */
@@ -91,4 +100,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+}
+body{
+    
 }
