@@ -13,6 +13,7 @@
       }
     mysqli_select_db($db,$project);
     
+    gatekeeper();
     
     $email = $_SESSION['email'];
     $firstName = $_SESSION['firstname'];
