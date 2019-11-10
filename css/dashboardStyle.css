@@ -83,7 +83,7 @@
     width: 100%;
 }
 
-#classMenu {
+.classMenu {
     display: none;
     max-height: 200px;
     overflow: hidden;
