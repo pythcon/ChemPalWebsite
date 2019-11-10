@@ -46,17 +46,47 @@
         <div class="row">
           <div class="col-lg-12">
             <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
-            <h1 class="text-center">Bootstrap Sidebar</h1>
-            <h2 class="small text-center">Second Header</h2>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium perferendis maiores velit ad id delectus nisi eligendi doloremque officia necessitatibus, repellendus alias omnis, natus nam voluptates dolor vel minus ab?</p>
+            <h1 class="text-center">Create a Class</h1>
+            <p class="text-center"></p>
+          <div class="infoContainer">
+            <div class="createContainer">
+                <div class="createOptions">
+                    <form action="handler_createclass.php" method="post" name="classForm">
+                        <label>Class Name:</label>
+                        <input type="text" name="className">
+                        <br>
+                        <h2 class="createClassHeading">RUN TIME</h2>
+                        <div class="indented">
+                            <br>
+                            <label>From:</label>
+                            <input type="text" name="startDate">
+                            <br>
+                            <label>To:</label>
+                            <input type="text" name="endDate">
+                        </div>
+                        <br>
+                        <label>Description:</label>
+                        <br>
+                        <textarea name="classDescription">
+                        </textarea>
+                    </form>
+                </div>
+                <div class="studentContainer">
+                    <div class="studentCheckboxes">
+                        <input type='checkbox' name='checkbox' value='$email'>&nbsp;Suzy Hlinka
+                        <!--while (row thing){
+                                $student = $r['firstName']. " " .$r['lastName'];
+                                echo "<input type='checkbox' name='checkbox' value='$email'>&nbsp;$student";
+                            }-->
+                    </div>
+                </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-	
-	
-	
 </body>
 <!-- partial -->
   
