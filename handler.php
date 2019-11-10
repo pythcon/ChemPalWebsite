@@ -21,7 +21,7 @@
 
 //get data
     getData("email", $email);
-    getData("pass", $pass);
+    getData("password", $pass);
 
 //check to see if data is good
     if ($bad) exit("Bad Data");
