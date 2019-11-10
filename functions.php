@@ -45,7 +45,7 @@
             echo"
             <script>
                 alert(\"Not logged in...\");
-                window.location.replace(\"/vr/index.html\");
+                window.location.replace(\"/index.html\");
             </script>";
             exit();
         }
