@@ -20,7 +20,7 @@
     $delay = 3;
 
 //get data
-    getData("email", $email);
+    getData("username", $email);
     getData("password", $pass);
 
 //check to see if data is good
