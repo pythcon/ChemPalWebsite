@@ -38,8 +38,8 @@
 
 //store first and last name
     $row = mysqli_fetch_array($t,MYSQLI_ASSOC);
-    $_SESSION["firstname"] = $row["firstname"];
-    $_SESSION["lastname"] = $row["lastname"];
+    $_SESSION["firstname"] = $row["firstName"];
+    $_SESSION["lastname"] = $row["lastName"];
 
 //redirect to dashboard
 //passed authentication
