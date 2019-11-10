@@ -13,6 +13,7 @@
 <body>
     
 <?php
+    session_start();
     $email = $_SESSION['email'];
     $firstName = $_SESSION['firstname'];
     $lastName = $_SESSION['lastname'];
