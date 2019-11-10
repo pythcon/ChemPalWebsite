@@ -39,7 +39,8 @@
             </li>
             <!-- PHP CODE for pulling classes from db-->
             <?php
-            
+                $s = "SELECT * FROM class WHERE email='$email'"; 
+                $t = mysqli_query($db,$s) or die("Error submitting query"); 
                 while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
                     $class 				= $r[ "class" ];
                     
